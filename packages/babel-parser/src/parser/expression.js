@@ -823,7 +823,6 @@ export default class ExpressionParser extends LValParser {
     let first = true;
     const oldInFSharpPipelineDirectBody = this.state.inFSharpPipelineDirectBody;
     this.state.inFSharpPipelineDirectBody = false;
-
     while (!this.eat(close)) {
       if (first) {
         first = false;
@@ -870,7 +869,6 @@ export default class ExpressionParser extends LValParser {
     }
 
     this.state.inFSharpPipelineDirectBody = oldInFSharpPipelineDirectBody;
-
     return elts;
   }
 
@@ -912,7 +910,6 @@ export default class ExpressionParser extends LValParser {
 
     const canBeArrow = this.state.potentialArrowAt === this.state.start;
     let node;
-
     switch (this.state.type) {
       case tt._super:
         if (!this.scope.allowSuper && !this.options.allowSuperOutsideMethod) {
@@ -1077,6 +1074,12 @@ export default class ExpressionParser extends LValParser {
 
       case tt.at:
         this.parseDecorators();
+      case tt.add:
+      case tt.subtract:
+      case tt.multiply:
+      case tt.divide:
+      case tt.mod:
+        return this.parseLiteral(this.state.value, "StringLiteral");
 
       case tt._class:
         node = this.startNode();

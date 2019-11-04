@@ -1,8 +1,8 @@
 {
-  "name": "@babel/parser",
-  "version": "7.6.4",
+  "name": "babel-operator-parser",
+  "version": "1.0.2",
   "description": "A JavaScript parser",
-  "author": "Sebastian McKenzie <sebmck@gmail.com>",
+  "author": "Lakhan Samani <lakhan.m.samani@gmail.com>",
   "homepage": "https://babeljs.io/",
   "license": "MIT",
   "publishConfig": {

@@ -425,12 +425,18 @@ export default class Tokenizer extends LocationParser {
 
   readToken_slash(): void {
     // '/'
+    if (
+      this.input.charAt(this.state.pos) === "/" &&
+      this.input.charAt(this.state.pos + 1) === ")"
+    ) {
+      this.finishOp(tt.divide, 1);
+      return;
+    }
     if (this.state.exprAllowed && !this.state.inType) {
       ++this.state.pos;
       this.readRegexp();
       return;
     }
-
     const next = this.input.charCodeAt(this.state.pos + 1);
     if (next === charCodes.equalsTo) {
       this.finishOp(tt.assign, 2);
@@ -477,8 +483,19 @@ export default class Tokenizer extends LocationParser {
       width++;
       type = tt.assign;
     }
-
-    this.finishOp(type, width);
+    if (
+      this.input.charAt(this.state.pos) === "*" &&
+      this.input.charAt(this.state.pos + 1) === ")"
+    ) {
+      this.finishOp(tt.multiply, 1);
+    } else if (
+      this.input.charAt(this.state.pos) === "%" &&
+      this.input.charAt(this.state.pos + 1) === ")"
+    ) {
+      this.finishOp(tt.mod, 1);
+    } else {
+      this.finishOp(type, width);
+    }
   }
 
   readToken_pipe_amp(code: number): void {
@@ -553,7 +570,19 @@ export default class Tokenizer extends LocationParser {
     if (next === charCodes.equalsTo) {
       this.finishOp(tt.assign, 2);
     } else {
-      this.finishOp(tt.plusMin, 1);
+      if (
+        this.input.charAt(this.state.pos) === "+" &&
+        this.input.charAt(this.state.pos + 1) === ")"
+      ) {
+        this.finishOp(tt.add, 1);
+      } else if (
+        this.input.charAt(this.state.pos) === "-" &&
+        this.input.charAt(this.state.pos + 1) === ")"
+      ) {
+        this.finishOp(tt.subtract, 1);
+      } else {
+        this.finishOp(tt.plusMin, 1);
+      }
     }
   }
 

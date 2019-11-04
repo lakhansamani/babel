@@ -157,6 +157,11 @@ export const types: { [name: string]: TokenType } = {
     binop: 12,
     rightAssociative: true,
   }),
+  add: new TokenType("+"),
+  subtract: new TokenType("-"),
+  multiply: new TokenType("*"),
+  divide: new TokenType("/"),
+  mod: new TokenType("%"),
 
   // Keywords
   _break: createKeyword("break"),
