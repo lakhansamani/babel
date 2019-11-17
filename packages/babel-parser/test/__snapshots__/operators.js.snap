@@ -1004,3 +1004,405 @@ Node {
   "type": "File",
 }
 `;
+
+exports[`operator should parse operator param with extra whitespace 1`] = `
+Node {
+  "comments": Array [],
+  "end": 36,
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 36,
+      "line": 1,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "end": 36,
+        "expression": Node {
+          "arguments": Array [
+            Node {
+              "end": 29,
+              "extra": Object {
+                "raw": "+",
+                "rawValue": "+",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 29,
+                  "line": 1,
+                },
+                "start": Position {
+                  "column": 28,
+                  "line": 1,
+                },
+              },
+              "start": 28,
+              "type": "StringLiteral",
+              "value": "+",
+            },
+          ],
+          "callee": Node {
+            "computed": false,
+            "end": 26,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 26,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 0,
+                "line": 1,
+              },
+            },
+            "object": Node {
+              "elements": Array [
+                Node {
+                  "end": 2,
+                  "extra": Object {
+                    "raw": "1",
+                    "rawValue": 1,
+                  },
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 2,
+                      "line": 1,
+                    },
+                    "start": Position {
+                      "column": 1,
+                      "line": 1,
+                    },
+                  },
+                  "start": 1,
+                  "type": "NumericLiteral",
+                  "value": 1,
+                },
+                Node {
+                  "end": 4,
+                  "extra": Object {
+                    "raw": "2",
+                    "rawValue": 2,
+                  },
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 4,
+                      "line": 1,
+                    },
+                    "start": Position {
+                      "column": 3,
+                      "line": 1,
+                    },
+                  },
+                  "start": 3,
+                  "type": "NumericLiteral",
+                  "value": 2,
+                },
+                Node {
+                  "end": 6,
+                  "extra": Object {
+                    "raw": "3",
+                    "rawValue": 3,
+                  },
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 6,
+                      "line": 1,
+                    },
+                    "start": Position {
+                      "column": 5,
+                      "line": 1,
+                    },
+                  },
+                  "start": 5,
+                  "type": "NumericLiteral",
+                  "value": 3,
+                },
+              ],
+              "end": 7,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 7,
+                  "line": 1,
+                },
+                "start": Position {
+                  "column": 0,
+                  "line": 1,
+                },
+              },
+              "start": 0,
+              "type": "ArrayExpression",
+            },
+            "property": Node {
+              "end": 26,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 26,
+                  "line": 1,
+                },
+                "identifierName": "reduceWithOperator",
+                "start": Position {
+                  "column": 8,
+                  "line": 1,
+                },
+              },
+              "name": "reduceWithOperator",
+              "start": 8,
+              "type": "Identifier",
+            },
+            "start": 0,
+            "type": "MemberExpression",
+          },
+          "end": 35,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 35,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "start": 0,
+          "type": "CallExpression",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 36,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "ExpressionStatement",
+      },
+    ],
+    "directives": Array [],
+    "end": 36,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 36,
+        "line": 1,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;
+
+exports[`operator should parse operator param with whitespace 1`] = `
+Node {
+  "comments": Array [],
+  "end": 32,
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 32,
+      "line": 1,
+    },
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "end": 32,
+        "expression": Node {
+          "arguments": Array [
+            Node {
+              "end": 29,
+              "extra": Object {
+                "raw": "+",
+                "rawValue": "+",
+              },
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 29,
+                  "line": 1,
+                },
+                "start": Position {
+                  "column": 28,
+                  "line": 1,
+                },
+              },
+              "start": 28,
+              "type": "StringLiteral",
+              "value": "+",
+            },
+          ],
+          "callee": Node {
+            "computed": false,
+            "end": 26,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 26,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 0,
+                "line": 1,
+              },
+            },
+            "object": Node {
+              "elements": Array [
+                Node {
+                  "end": 2,
+                  "extra": Object {
+                    "raw": "1",
+                    "rawValue": 1,
+                  },
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 2,
+                      "line": 1,
+                    },
+                    "start": Position {
+                      "column": 1,
+                      "line": 1,
+                    },
+                  },
+                  "start": 1,
+                  "type": "NumericLiteral",
+                  "value": 1,
+                },
+                Node {
+                  "end": 4,
+                  "extra": Object {
+                    "raw": "2",
+                    "rawValue": 2,
+                  },
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 4,
+                      "line": 1,
+                    },
+                    "start": Position {
+                      "column": 3,
+                      "line": 1,
+                    },
+                  },
+                  "start": 3,
+                  "type": "NumericLiteral",
+                  "value": 2,
+                },
+                Node {
+                  "end": 6,
+                  "extra": Object {
+                    "raw": "3",
+                    "rawValue": 3,
+                  },
+                  "loc": SourceLocation {
+                    "end": Position {
+                      "column": 6,
+                      "line": 1,
+                    },
+                    "start": Position {
+                      "column": 5,
+                      "line": 1,
+                    },
+                  },
+                  "start": 5,
+                  "type": "NumericLiteral",
+                  "value": 3,
+                },
+              ],
+              "end": 7,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 7,
+                  "line": 1,
+                },
+                "start": Position {
+                  "column": 0,
+                  "line": 1,
+                },
+              },
+              "start": 0,
+              "type": "ArrayExpression",
+            },
+            "property": Node {
+              "end": 26,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 26,
+                  "line": 1,
+                },
+                "identifierName": "reduceWithOperator",
+                "start": Position {
+                  "column": 8,
+                  "line": 1,
+                },
+              },
+              "name": "reduceWithOperator",
+              "start": 8,
+              "type": "Identifier",
+            },
+            "start": 0,
+            "type": "MemberExpression",
+          },
+          "end": 31,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 31,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "start": 0,
+          "type": "CallExpression",
+        },
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 32,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "ExpressionStatement",
+      },
+    ],
+    "directives": Array [],
+    "end": 32,
+    "interpreter": null,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 32,
+        "line": 1,
+      },
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "sourceType": "module",
+    "start": 0,
+    "type": "Program",
+  },
+  "start": 0,
+  "type": "File",
+}
+`;

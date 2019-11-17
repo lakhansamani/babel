@@ -50,3 +50,20 @@ export function getLineInfo(input: string, offset: number): Position {
 
   return new Position(line, offset - lineStart);
 }
+
+// The getNextTokenPosition function helps in trimming spaces
+// and get position of actual token
+export function getNextTokenPosition(
+  input: string,
+  currentPosition: number,
+): number {
+  for (let i = currentPosition + 1; i < input.length; i++) {
+    if (input.charAt(i) !== " ") {
+      return i;
+    }
+  }
+
+  return currentPosition + 1 < input.length
+    ? currentPosition + 1
+    : currentPosition;
+}

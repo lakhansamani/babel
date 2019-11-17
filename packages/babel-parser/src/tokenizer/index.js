@@ -7,7 +7,7 @@ import { isIdentifierStart, isIdentifierChar } from "../util/identifier";
 import { types as tt, keywords as keywordTypes, type TokenType } from "./types";
 import { type TokContext, types as ct } from "./context";
 import LocationParser from "../parser/location";
-import { SourceLocation } from "../util/location";
+import { SourceLocation, getNextTokenPosition } from "../util/location";
 import {
   lineBreak,
   lineBreakG,
@@ -425,9 +425,10 @@ export default class Tokenizer extends LocationParser {
 
   readToken_slash(): void {
     // '/'
+    const nextTokenPosition = getNextTokenPosition(this.input, this.state.pos);
     if (
       this.input.charAt(this.state.pos) === "/" &&
-      this.input.charAt(this.state.pos + 1) === ")"
+      this.input.charAt(nextTokenPosition) === ")"
     ) {
       this.finishOp(tt.divide, 1);
       return;
@@ -483,14 +484,15 @@ export default class Tokenizer extends LocationParser {
       width++;
       type = tt.assign;
     }
+    const nextTokenPosition = getNextTokenPosition(this.input, this.state.pos);
     if (
       this.input.charAt(this.state.pos) === "*" &&
-      this.input.charAt(this.state.pos + 1) === ")"
+      this.input.charAt(nextTokenPosition) === ")"
     ) {
       this.finishOp(tt.multiply, 1);
     } else if (
       this.input.charAt(this.state.pos) === "%" &&
-      this.input.charAt(this.state.pos + 1) === ")"
+      this.input.charAt(nextTokenPosition) === ")"
     ) {
       this.finishOp(tt.mod, 1);
     } else {
@@ -570,14 +572,18 @@ export default class Tokenizer extends LocationParser {
     if (next === charCodes.equalsTo) {
       this.finishOp(tt.assign, 2);
     } else {
+      const nextTokenPosition = getNextTokenPosition(
+        this.input,
+        this.state.pos,
+      );
       if (
         this.input.charAt(this.state.pos) === "+" &&
-        this.input.charAt(this.state.pos + 1) === ")"
+        this.input.charAt(nextTokenPosition) === ")"
       ) {
         this.finishOp(tt.add, 1);
       } else if (
         this.input.charAt(this.state.pos) === "-" &&
-        this.input.charAt(this.state.pos + 1) === ")"
+        this.input.charAt(nextTokenPosition) === ")"
       ) {
         this.finishOp(tt.subtract, 1);
       } else {
